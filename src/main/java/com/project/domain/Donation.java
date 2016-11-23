@@ -12,18 +12,18 @@ public class Donation {
 		this.id = id;
 	}
 
-	private String fluid_type;
+	private String type;
 
-	public String getFluid_type() {
-		return fluid_type;
+	public String getType() {
+		return type;
 	}
 
-	public void setFluid_type(String fluid_type) {
-		this.fluid_type = fluid_type;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public Donation(String _fluid_type) {
-		this.fluid_type = _fluid_type;
+	public Donation(String _type) {
+		this.type = _type;
 	}
 
 	public Donation(){
