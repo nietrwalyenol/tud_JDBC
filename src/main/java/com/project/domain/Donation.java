@@ -12,18 +12,18 @@ public class Donation {
 		this.id = id;
 	}
 
-	private String type;
+	private String place;
 
-	public String getType() {
-		return type;
+	public String getPlace() {
+		return place;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setPlace(String place) {
+		this.place = place;
 	}
 
-	public Donation(String _type) {
-		this.type = _type;
+	public Donation(String _place) {
+		this.place = _place;
 	}
 
 	public Donation(){
