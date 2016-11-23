@@ -1,66 +1,58 @@
-package com.project.domain;
-
+package main.java.com.project.domain;
 
 public class Fluid {
-
 	private int id;
-	
-	private String data_pobrania;
-	private int rodzaj;
-	private int objetosc;
-	private int opis;
+
+	private String fluid_type;
+	private int volume;
+	private int value;
+	private int donation_id;
+
+	public Fluid(String fluid_type, int volume, int value) {
+		super();
+		this.fluid_type = fluid_type;
+		this.volume = volume;
+		this.value = value;
+	}
+
+	public Fluid(String fluid_type, int volume, int value, int donation_id) {
+		super();
+		this.fluid_type = fluid_type;
+		this.volume = volume;
+		this.value = value;
+		this.donation_id = donation_id;
+	}
+
+	public Fluid(){}
+
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getData_pobrania() {
-		return data_pobrania;
+	public int getDonation_id() {
+		return donation_id;
 	}
-	public void setData_pobrania(String data_pobrania) {
-		this.data_pobrania = data_pobrania;
+	public void setDonation_id(int donation_id) {
+		this.donation_id = donation_id;
 	}
-	public int getRodzaj() {
-		return rodzaj;
+	public String getFluid_type() {
+		return fluid_type;
 	}
-	public void setRodzaj(int rodzaj) {
-		this.rodzaj = rodzaj;
+	public void setFluid_type(String fluid_type) {
+		this.fluid_type = fluid_type;
 	}
-	public int getObjetosc() {
-		return objetosc;
+	public int getVolume() {
+		return volume;
 	}
-	public void setObjetosc(int objetosc) {
-		this.objetosc = objetosc;
+	public void setVolume(int volume) {
+		this.volume = volume;
 	}
-	public int getOpis() {
-		return opis;
+	public int getValue() {
+		return value;
 	}
-	public void setOpis(int opis) {
-		this.opis = opis;
+	public void setValue(int value) {
+		this.value = value;
 	}
-	public Fluid(int id, String data_pobrania, int rodzaj, int objetosc, int opis) {
-		super();
-		this.id = id;
-		this.data_pobrania = data_pobrania;
-		this.rodzaj = rodzaj;
-		this.objetosc = objetosc;
-		this.opis = opis;
-	}
-	public Fluid(String data_pobrania, int rodzaj, int objetosc, int opis) {
-		super();
-		this.data_pobrania = data_pobrania;
-		this.rodzaj = rodzaj;
-		this.objetosc = objetosc;
-		this.opis = opis;
-	}
-	public Fluid(String data_pobrania, int rodzaj, int objetosc) {
-		super();
-		this.data_pobrania = data_pobrania;
-		this.rodzaj = rodzaj;
-		this.objetosc = objetosc;
-	}
-	public Fluid() {
-	}
-	
 }
