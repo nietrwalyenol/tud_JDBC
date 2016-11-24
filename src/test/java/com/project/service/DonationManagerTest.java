@@ -93,4 +93,20 @@ public class DonationManagerTest {
 		donationManager.add_donation(donation);
 		assertEquals(true, donationManager.update_donation(donation.getPlace(), "Ambulans"));
 	}
+	
+	@Test
+        public void test_fluids_from_donation(){
+                InterfaceFluidManager fm = new FluidManager();
+                donationManager.add_donation(new Donation("Piwnica"));
+
+                int don_id = donationManager.select_id_from_donations("Piwnica");
+
+                fm.add_fluid(new Fluid("Krew", 400,200,don_id));
+                fm.add_fluid(new Fluid("Osocze", 200,150,don_id));
+
+                List<Fluid> fluids = fm.get_all_fluids_for_donation("Piwnica");
+                assertEquals(2, fluids.size());
+                fm.clear_fluids();
+        }
+	
 }
