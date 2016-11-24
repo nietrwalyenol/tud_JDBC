@@ -1,4 +1,4 @@
-package main.java.com.project.service;
+package com.project.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,8 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.com.project.domain.Fluid;
-import main.java.com.project.domain.Donation;
+import com.project.domain.Fluid;
+import com.project.domain.Donation;
 
 public class DonationManager implements InterfaceDonationManager{
 	private Connection connection;
@@ -69,8 +69,8 @@ public class DonationManager implements InterfaceDonationManager{
 			e.printStackTrace();
 		}
 	}
-	/*
-	public boolean PS_add_donation(Donation donation) {
+
+	public boolean add_donation(Donation donation) {
 		int count = 0;
 		try {
 			PS_add_donation.setString(1, donation.getPlace());
@@ -83,7 +83,7 @@ public class DonationManager implements InterfaceDonationManager{
 		if(count == 1) return true;
 		else return false;
 	}
-/*
+
 	public int delete_donation(Donation donation){
 		int count = 0;
 		try{
@@ -94,8 +94,8 @@ public class DonationManager implements InterfaceDonationManager{
 		}
 		return count;
 	}
-*/
-	public int select_id_from_donation(String place){
+
+	public int select_id_from_donations(String place){
 		int output = -1;
 		try {
 			PS_select_id.setString(1, place);
@@ -114,8 +114,8 @@ public class DonationManager implements InterfaceDonationManager{
 
 		return output;
 	}
-/*
-	public List<Donation> PS_get_all_donations() {
+
+	public List<Donation> get_all_donations() {
 		List<Donation> donations = new ArrayList<Donation>();
 
 		try {
@@ -157,7 +157,7 @@ public class DonationManager implements InterfaceDonationManager{
 
 		return false;
 	}
-*/
+
 	public boolean update_donation(String place, String place_new) {
 		int count = 0;
 		try {
