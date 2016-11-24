@@ -1,9 +1,9 @@
-package main.java.com.project.service;
+package com.project.service;
 
 import java.util.List;
 
-import main.java.com.project.domain.Fluid;
-import main.java.com.project.domain.Donation;
+import com.project.domain.Fluid;
+import com.project.domain.Donation;
 
 public interface InterfaceFluidManager {
 	public boolean add_fluid(Fluid fluid);
