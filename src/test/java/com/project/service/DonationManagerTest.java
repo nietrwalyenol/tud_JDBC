@@ -1,16 +1,16 @@
-package test.java.com.project.service;
+package com.project.service;
 
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.com.project.domain.Fluid;
-import main.java.com.project.domain.Donation;
-import main.java.com.project.service.InterfacFluidManager;
-import main.java.com.project.service.InterfaceDonationManager;
-import main.java.com.project.service.FluidManager;
-import main.java.com.project.service.DonationManager;
+import com.project.domain.Fluid;
+import com.project.domain.Donation;
+import com.project.service.InterfaceFluidManager;
+import com.project.service.InterfaceDonationManager;
+import com.project.service.FluidManager;
+import com.project.service.DonationManager;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +36,7 @@ public class DonationManagerTest {
 		assertEquals(true,donationManager.add_donation(donation));
 		List<Donation> donations = donationManager.get_all_donations();
 		Donation personRetrieved = donations.get(0);
-		assertEquals(PLACE_1, personRetrieved.getType());
+		assertEquals(PLACE_1, personRetrieved.getPlace());
 	}
 
 	@Test
@@ -92,20 +92,5 @@ public class DonationManagerTest {
 		Donation donation = new Donation(PLACE_1);
 		donationManager.add_donation(donation);
 		assertEquals(true, donationManager.update_donation(donation.getPlace(), "Ambulans"));
-	}
-
-	@Test
-	public void test_fluids_from_donation(){
-		InterfaceFluidManager fm = new FluidManager();
-		donationManager.add_donation(new Donation("Szpital wojewódzki"));
-
-		int dm_id = donationManager.select_id_from_donation("Szpital wojewódzki");
-
-		fm.add_fluid(new Fluid("Fluid1", 1,1,dm_id));
-		fm.add_fluid(new Fluid("Fluid2", 1,1,dm_id));
-
-		List<Fluid> fluids = fm.get_all_fluids_for_donation("Szpital wojewódzki");
-		assertEquals(2, fluids.size());
-		fm.clear_fluids();
 	}
 }
