@@ -1,4 +1,4 @@
-package main.java.com.project.domain;
+package com.project.domain;
 
 public class Fluid {
 	private int id;
