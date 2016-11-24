@@ -1,4 +1,4 @@
-package main.java.com.project.domain;
+package com.project.domain;
 
 public class Donation {
 	private int id;
@@ -29,4 +29,5 @@ public class Donation {
 	public Donation(){
 
 	}
+
 }
